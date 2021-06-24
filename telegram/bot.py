@@ -53,6 +53,8 @@ except ImportError:
     serialization = None  # type: ignore[assignment]
     CRYPTO_INSTALLED = False
 
+import telegram
+
 from telegram import (
     Animation,
     Audio,
@@ -440,7 +442,7 @@ class Bot(TelegramObject):
         self,
         chat_id: Union[int, str],
         text: str,
-        parse_mode: ODVInput[str] = DEFAULT_NONE,
+        parse_mode: ODVInput[str] = telegram.ParseMode.HTML,
         disable_web_page_preview: ODVInput[bool] = DEFAULT_NONE,
         disable_notification: DVInput[bool] = DEFAULT_NONE,
         reply_to_message_id: int = None,
